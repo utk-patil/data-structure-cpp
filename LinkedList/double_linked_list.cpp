@@ -36,10 +36,14 @@ public:
 
     int Count()
     {
+        int count = 0;
+
+        return count;
     }
 
     bool Search(int search)
     {
+        return false;
     }
 
     void AddAtBeginning(int value)
