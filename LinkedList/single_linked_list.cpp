@@ -31,6 +31,8 @@ public:
     void CreateList()
 
     {
+        LinkedList();
+
         int number_of_node, data = 0;
 
         cout << "Enter the number of nodes : ";
@@ -225,15 +227,33 @@ public:
             cout << "Node with value " << value << " not found" << endl;
         }
     }
+
+    void Reverse()
+    {
+        Node *prev = nullptr;
+        Node *current = head;
+        Node *next = nullptr;
+
+        while (current != nullptr)
+        {
+            next = current->next;
+            current->next = prev;
+            prev = current;
+            current = next;
+        }
+
+        head = prev;
+    }
 };
 
 int main()
 {
-    int choice, data, item, pos, search;
+    int choice, data, item, pos, search = 0;
     LinkedList linked_list;
 
     while (1)
     {
+        choice, data, item, pos, search = 0;
         system("cls");
 
         cout << "1. Create empty list" << endl;
@@ -312,6 +332,10 @@ int main()
             cout << "Enter the element to delete: ";
             cin >> data;
             linked_list.Delete(data);
+            break;
+
+        case 11:
+            linked_list.Reverse();
             break;
 
         case 12:
