@@ -34,7 +34,7 @@ public:
     {
     }
 
-    void Count()
+    int Count()
     {
     }
 
