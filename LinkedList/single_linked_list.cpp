@@ -135,7 +135,95 @@ public:
 
     void AddAfterNode(int value, int item)
     {
-        if(head){}
+        Node *temp = head;
+
+        while (temp != nullptr && temp->data != item)
+        {
+            temp = temp->next;
+        }
+
+        if (temp != nullptr)
+        {
+            Node *new_node = new Node(value);
+
+            new_node->next = temp->next;
+            temp->next = new_node;
+        }
+        else
+        {
+            cout << "Node with value " << item << " not found" << endl;
+        }
+    }
+
+    void AddBeforeNode(int value, int item)
+    {
+        Node *temp = head;
+
+        while (temp != nullptr && temp->next != nullptr && temp->next->data != item)
+        {
+            temp = temp->next;
+        }
+
+        if (temp->next != nullptr)
+        {
+            Node *new_node = new Node(value);
+            new_node->next = temp->next;
+            temp->next = new_node;
+        }
+        else
+        {
+            cout << "Node with value " << item << " not found" << endl;
+        }
+    }
+
+    void AddAtPosition(int value, int pos)
+    {
+        Node *temp = head;
+        int current_pos = 1;
+
+        if (pos == 1)
+        {
+            AddAtBeginning(value);
+            return;
+        }
+
+        while (temp != nullptr && current_pos < pos - 1)
+        {
+            temp = temp->next;
+            current_pos++;
+        }
+
+        if (temp != nullptr)
+        {
+            Node *new_node = new Node(value);
+            new_node->next = temp->next;
+            temp->next = new_node;
+        }
+        else
+        {
+            cout << "Position " << pos << " is out of bound" << endl;
+        }
+    }
+
+    void Delete(int value)
+    {
+        Node *temp = head;
+
+        while (temp != nullptr && temp->next != nullptr && temp->next->data != value)
+        {
+            temp = temp->next;
+        }
+
+        if (temp->next != nullptr)
+        {
+            Node *node_to_delete = temp->next;
+            temp->next = node_to_delete->next;
+            delete node_to_delete;
+        }
+        else
+        {
+            cout << "Node with value " << value << " not found" << endl;
+        }
     }
 };
 
@@ -202,6 +290,28 @@ int main()
             cout << "Enter the node after which to add: ";
             cin >> item;
             linked_list.AddAfterNode(data, item);
+            break;
+
+        case 8:
+            cout << "Enter the element to add: ";
+            cin >> data;
+            cout << "Enter the node after which to before: ";
+            cin >> item;
+            linked_list.AddBeforeNode(data, item);
+            break;
+
+        case 9:
+            cout << "Enter the element to add: ";
+            cin >> data;
+            cout << "Enter the position to add: ";
+            cin >> pos;
+            linked_list.AddAtPosition(data, pos);
+            break;
+
+        case 10:
+            cout << "Enter the element to delete: ";
+            cin >> data;
+            linked_list.Delete(data);
             break;
 
         case 12:
