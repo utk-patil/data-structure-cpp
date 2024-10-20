@@ -24,14 +24,60 @@ class DoubleLinkedList
 {
 private:
     Node *head;
+    Node *tail;
 
 public:
+    DoubleLinkedList()
+    {
+        head = nullptr;
+        tail = nullptr;
+    }
+
     void CreateList()
     {
+        DoubleLinkedList();
+
+        int number_of_node, data = 0;
+
+        cout << "Enter the number of nodes : ";
+        cin >> number_of_node;
+
+        if (number_of_node == 0)
+            return;
+
+        cout << "Please enter the 1 element to be inserted: ";
+        cin >> data;
+
+        AddAtBeginning(data);
+
+        for (int i = 2; i <= number_of_node; i++)
+        {
+            cout << "Please enter the " << i << " element to be inserted: ";
+            cin >> data;
+
+            AddAtEnd(data);
+        }
     }
 
     void Display()
     {
+        if (head == nullptr)
+        {
+            cout << "List is empty!!!" << endl;
+            return;
+        }
+
+        Node *temp = head;
+
+        cout << "List: ";
+
+        while (temp != nullptr)
+        {
+            cout << temp->data << "->";
+            temp = temp->next;
+        }
+
+        cout << "NULL" << endl;
     }
 
     int Count()
@@ -48,10 +94,32 @@ public:
 
     void AddAtBeginning(int value)
     {
+        Node *new_node = new Node(value);
+
+        if (head == nullptr)
+        {
+            head = tail = new_node;
+            return;
+        }
+
+        new_node->next = head;
+        head->prev = new_node;
+        head = new_node;
     }
 
     void AddAtEnd(int value)
     {
+        Node *new_node = new Node(value);
+
+        if (head == nullptr)
+        {
+            head = tail = new_node;
+            return;
+        }
+
+        tail->next = new_node;
+        new_node->prev = tail;
+        tail = new_node;
     }
 
     void AddAfterNode(int value, int item)
