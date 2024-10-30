@@ -1,4 +1,4 @@
-/* 2. Program of sorting using bubble sort */
+/* 3. Program of sorting using insertion sort */
 #include <iostream>
 #include <cstdlib>
 #define MAX 100
@@ -27,22 +27,18 @@ int main()
 
     cout << endl;
 
-    // Bubble sort
-    for (int i = 0; i < number_of_element - 1; i++)
+    // insertion sort
+    for (int i = 1; i < number_of_element; i++)
     {
-        bool swapped = false;
+        int j = 0;
+        int temp = arr[i];
 
-        for (int j = 0; j < number_of_element - 1 - i; j++)
+        for (j = i - 1; j >= 0 && temp < arr[j]; j--)
         {
-            if (arr[j] > arr[j + 1])
-                swap(arr[j], arr[j + 1]);
-
-            swapped = true;
+            arr[j + 1] = arr[j];
         }
 
-        // if list is sorted
-        if (!swapped)
-            break;
+        arr[j + 1] = temp;
     }
 
     cout << "Sorted list is : ";
