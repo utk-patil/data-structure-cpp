@@ -4,23 +4,35 @@ This repository contains implementations of various data structures in C++. Each
 
 ## Table of Contents
 - [Array, Pointers and Structures](#array-pointers-and-structures)
-- [Linked List](#linked-list)
-- [Stack](#stack)
-- [Queue](#queue)
-- [Tree](#tree)
-- [Graph](#graph)
-- [Hash Table](#hash-table)
-- [Other Topics](#other-topics)
+- [Linked Lists](#linked-lists)
+- [Stacks and Queues](#stacks-and-queues)
+- [Recursion](#recursion)
+- [Trees](#trees)
+- [Graphs](#graphs)
+- [Sorting](#sorting)
+- [Searching and Hashing](#searching-and-hashing)
+- [Storage Management](#storage-management)
 
 ---
 
 ### Array, Pointers and Structures
 Array is a linear data structure used to store a collection of elements. Here are some common operations and examples.
 
-- [Array Basics](Array/array_basics.cpp)
-- [Array Elements Address](Array/array_elements_address.cpp)
-- [Dynamic Array](Array/dynamic_array.cpp)
-- [Multi-dimensional Array](Array/multi_dimensional_array.cpp)
+1. Program to input values into an array and display them. ![🔗](Array/basic.cpp)
+4. Program to pass array elements to a function. ![🔗](Array/array_elements_to_function.cpp)
+5. Program to pass an array to a function. ![🔗](Array/array_to_function.cpp)
+9. Program to dereference pointer variables. ![🔗](Array/dereference_pointer.cpp)
+11. Program to print the value and address of the elements of an array. ![🔗](Array/array_elements_address.cpp)
+12. Program to print the value and address of elements of an array using pointer notation. ![🔗](Array/array_elements_address_using_pointer.cpp)
+13. Call by value. ![🔗](Array/call_by_value.cpp)
+14. Call by reference. ![🔗](Array/call_by_reference.cpp)
+17. Program to show that chages to the array made inside the function affect the original array. ![🔗](Array/change_array_to_function.cpp)
+18. When an array is passed to a fuynction, the receiving argument is declared as a pointer. ![🔗](Array/array_passed_function_receiving_arg.cpp)
+19. Array of pointers. ![🔗](Array/array_of_pointers.cpp)
+20. Program to understand dynamic allocation of memory. ![🔗](Array/dynamic_memory_allocation.cpp)
+23. Program to assign a structure variable to another structure variable. ![🔗](Array/assign_structure_variable.cpp)
+25. Program to understand arrays within structures. ![🔗](Array/array_within_structure.cpp)
+32. Program to understand how an array of structures is sent to a function. ![🔗](Array/array_structure_as_arg.cpp)
 
 ---
 
