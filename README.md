@@ -53,6 +53,14 @@ Array is a linear data structure used to store a collection of elements. Here ar
 
 ---
 
+### Stacks and Queues
+Stack is a LIFO (Last In, First Out) data structure commonly used for recursion and function call management.
+Queue is a FIFO (First In, First Out) data structure, ideal for scenarios like task scheduling.
+
+1. Program of stack using array. [🔗](StacksQueues/stack.cpp)
+
+---
+
 ## How to Use This Repository
 1. Clone this repository.
 2. Navigate to the folder of the topic you are interested in.
