@@ -59,7 +59,7 @@ Queue is a FIFO (First In, First Out) data structure, ideal for scenarios like t
 
 1. Program of stack using array. [🔗](StacksQueues/stack.cpp)
 2. Program of stack using linked list. [🔗](StacksQueues/stack_using_linked_list.cpp)
-3. Program of queue using array. [🔗](StacksQueues/queue.cpp)
+3. Program of queue using array. [🔗](StacksQueues/queues.cpp)
 4. Program of queue using linked list. [🔗](StacksQueues/queue_using_linked_list.cpp)
 
 ---
