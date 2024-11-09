@@ -80,15 +80,33 @@ public:
         cout << "NULL" << endl;
     }
 
-    int Count()
+    int Count() const
     {
         int count = 0;
+
+        Node *temp = head;
+
+        while (temp != nullptr)
+        {
+            count++;
+            temp = temp->next;
+        }
 
         return count;
     }
 
-    bool Search(int search)
+    bool Search(int search) const
     {
+        Node *temp = head;
+
+        while (temp != nullptr)
+        {
+            if (temp->data == search)
+                return true;
+
+            temp = temp->next;
+        }
+
         return false;
     }
 
@@ -124,18 +142,151 @@ public:
 
     void AddAfterNode(int value, int item)
     {
+        if (head == nullptr)
+        {
+            cout << "List is empty!!!" << endl;
+            return;
+        }
+
+        Node *temp = head;
+
+        while (temp != nullptr && temp->data != item)
+        {
+            temp = temp->next;
+        }
+
+        if (temp != nullptr)
+        {
+            Node *new_node = new Node(value);
+            new_node->next = temp->next;
+            new_node->prev = temp;
+            temp->next = new_node;
+
+            if (temp->next != nullptr)
+            {
+                temp->next->prev = new_node;
+            }
+        }
+        else
+        {
+            cout << "Node with value " << item << " not found" << endl;
+        }
     }
 
     void AddBeforeNode(int value, int item)
     {
+        if (head == nullptr)
+        {
+            cout << "List is empty!!!" << endl;
+            return;
+        }
+
+        Node *temp = head;
+
+        while (temp != nullptr && temp->data != item)
+        {
+            temp = temp->next;
+        }
+
+        if (temp != nullptr)
+        {
+            Node *new_node = new Node(value);
+
+            new_node->next = temp;
+            new_node->prev = temp->prev;
+
+            if (temp->prev != nullptr)
+            {
+                temp->prev->next = new_node;
+                temp->prev = new_node;
+            }
+            else
+            {
+                head = new_node;
+            }
+        }
+        else
+        {
+            cout << "Node with value " << item << " not found" << endl;
+        }
     }
 
     void AddAtPosition(int value, int pos)
     {
+        int current_pos = 1;
+
+        if (pos == 1)
+        {
+            AddAtBeginning(value);
+            return;
+        }
+
+        Node *temp = head;
+
+        // traverse to the position before where we want to insert
+        while (temp != nullptr && current_pos < pos - 1)
+        {
+            temp = temp->next;
+            current_pos++;
+        }
+
+        if (temp != nullptr)
+        {
+            Node *new_node = new Node(value);
+
+            new_node->next = temp->next;
+            new_node->prev = temp;
+
+            if (temp->next != nullptr)
+            {
+                temp->next->prev = new_node;
+            }
+
+            temp->next = new_node;
+        }
+        else
+        {
+            cout << "Position " << pos << " is out of bound" << endl;
+        }
     }
 
     void Delete(int value)
     {
+        if (head == nullptr)
+        {
+            cout << "List is empty!!!" << endl;
+            return;
+        }
+
+        Node *temp = head;
+
+        while (temp != nullptr && temp->data != value)
+        {
+            temp = temp->next;
+        }
+
+        if (temp != nullptr)
+        {
+            if (temp->prev != nullptr)
+            {
+                temp->prev->next = temp->next;
+            }
+            else
+            {
+                head = temp->next;
+            }
+
+            if (temp->next != nullptr)
+            {
+                temp->next->prev = temp->prev;
+            }
+
+            delete temp;
+        }
+        else
+        {
+            cout << "Node with value " << value << " not found" << endl;
+        }
     }
 
     void Reverse()
