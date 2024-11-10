@@ -1,4 +1,4 @@
-/* Program of double linked list */
+/* 2. Program of double linked list */
 #include <iostream>
 #include <cstdlib>
 
@@ -291,6 +291,27 @@ public:
 
     void Reverse()
     {
+        if (head == nullptr)
+        {
+            cout << "List is empty!!!" << endl;
+            return;
+        }
+
+        Node *temp = nullptr;
+        Node *current = head;
+
+        while (current != nullptr)
+        {
+            temp = current->prev;
+            current->prev = current->next;
+            current->next = temp;
+            current = current->prev;
+        }
+
+        if (temp != nullptr)
+        {
+            head = temp->prev;
+        }
     }
 };
 
