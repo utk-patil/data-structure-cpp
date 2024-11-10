@@ -56,8 +56,8 @@ Array is a linear data structure used to store a collection of elements. Here ar
 ### Linked Lists
 A linked list is a dynamic data structure used to store a sequence of elements, with each element pointing to the next. This section includes implementations for different types of linked lists.
 
-1. Program of single linked list. [🔗](LinkedLists/single_linked_list.cpp)
-2. Program of double linked list [🔗](LinkedLists/double_linked_list.cpp)
+1. Program of single linked list. [🔗](LinkedList/single_linked_list.cpp)
+2. Program of double linked list [🔗](LinkedList/double_linked_list.cpp)
 
 ---
 
