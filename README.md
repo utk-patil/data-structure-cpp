@@ -53,6 +53,14 @@ Array is a linear data structure used to store a collection of elements. Here ar
 
 ---
 
+### Linked Lists
+A linked list is a dynamic data structure used to store a sequence of elements, with each element pointing to the next. This section includes implementations for different types of linked lists.
+
+1. Program of single linked list. [🔗](LinkedLists/single_linked_list.cpp)
+2. Program of double linked list [🔗](LinkedLists/double_linked_list.cpp)
+
+---
+
 ### Stacks and Queues
 Stack is a LIFO (Last In, First Out) data structure commonly used for recursion and function call management.<br><br>
 Queue is a FIFO (First In, First Out) data structure, ideal for scenarios like task scheduling.
