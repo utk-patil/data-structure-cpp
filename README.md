@@ -72,6 +72,14 @@ Queue is a FIFO (First In, First Out) data structure, ideal for scenarios like t
 
 ---
 
+### Searching and Hashing
+Searching involves finding an element, while hashing enables quick data access using keys.
+
+1. Sequencial or Linear search in an array. [🔗](SearchingHashing/linear_search.cpp)
+2. Sentinel sequencial search in an array. [🔗](SearchingHashing/sentinel_linear_search.cpp)
+
+---
+
 ## How to Use This Repository
 1. Clone this repository.
 2. Navigate to the folder of the topic you are interested in.
