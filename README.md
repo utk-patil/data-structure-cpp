@@ -77,6 +77,9 @@ Searching involves finding an element, while hashing enables quick data access u
 
 1. Sequencial or Linear search in an array. [🔗](SearchingHashing/linear_search.cpp)
 2. Sentinel sequencial search in an array. [🔗](SearchingHashing/sentinel_linear_search.cpp)
+3. Linear search in sorted array. [🔗](SearchingHashing/sorted_linear_search.cpp)
+4. Binary search in an array. [🔗](SearchingHashing/binary_search.cpp)
+5. Recursive binary search in an array. [🔗](SearchingHashing/recursive_binary_search_search.cpp)
 
 ---
 
