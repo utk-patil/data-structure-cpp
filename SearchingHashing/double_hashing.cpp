@@ -1,4 +1,4 @@
-/* 8. Linear probing */
+/* 8. Double hashing */
 #include <iostream>
 #include <cstdlib>
 #include <string>
