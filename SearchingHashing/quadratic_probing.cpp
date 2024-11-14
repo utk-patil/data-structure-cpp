@@ -52,12 +52,92 @@ class HashTable
 public:
     void insert(Employee emp)
     {
+        int key = emp.emp_id;
+        int index = hashFunction(index);
+
+        for (int i = 0; i < TABLE_SIZE; i++)
+        {
+            int probIndex = hashFunction(key + (i * i));
+
+            if (table[probIndex].status == EMPTY || table[probIndex].status == DELETED)
+            {
+                table[probIndex].info = emp;
+                table[probIndex].status = OCCUPIED;
+                cout << "Inserted (" << key << ", " << emp.name << ", " << emp.age << ") at index " << probIndex << endl;
+                return;
+            }
+        }
+
+        cout << "Hash table is full. Could not insert employee with ID " << key << endl;
+    }
+
+    void search(int key)
+    {
+        int index = hashFunction(key);
+
+        for (int i = 0; i < TABLE_SIZE; i++)
+        {
+            int probIndex = hashFunction(index + (i * i));
+
+            if (table[probIndex].status == OCCUPIED && table[probIndex].info.emp_id == key)
+            {
+                Employee emp = table[probIndex].info;
+
+                cout << "Found employee: ID " << emp.emp_id << ", Name = " << emp.name << ", Age = " << emp.age << " at index " << probIndex << endl;
+                return;
+            }
+        }
+
+        cout << "Employee with ID " << key << " not found." << endl;
+    }
+
+    void delete_record(int key)
+    {
+        int index = hashFunction(key);
+
+        for (int i = 0; i < TABLE_SIZE; i++)
+        {
+            int probIndex = hashFunction(index + (i * i));
+
+            if (table[probIndex].status == OCCUPIED && table[probIndex].info.emp_id == key)
+            {
+                table[probIndex].info = Employee();
+                table[probIndex].status = DELETED;
+                cout << "Deleted employee with ID " << key << " at index " << probIndex << endl;
+                return;
+            }
+        }
+
+        cout << "Employee with ID " << key << " not found." << endl;
+    }
+
+    void display() const
+    {
+        for (int i = 0; i < TABLE_SIZE; i++)
+        {
+            if (table[i].status == OCCUPIED)
+            {
+                Employee emp = table[i].info;
+
+                cout << "Index " << i << ": ID = " << emp.emp_id << ", Name = " << emp.name << ", Age = " << emp.age << endl;
+            }
+            else if (table[i].status == DELETED)
+            {
+                cout << "Index " << i << ": DELETED" << endl;
+            }
+            else
+            {
+                cout << "Index " << i << ": EMPTY" << endl;
+            }
+        }
     }
 };
 
 int main()
 {
-    int choice = 0;
+    HashTable hashTable;
+    int choice = 0, id, age, key;
+    string name;
 
     while (1)
     {
@@ -76,19 +156,31 @@ int main()
         switch (choice)
         {
         case 1:
-            /* code */
+            cout << "Enter employee id, name and age: ";
+            cin >> id >> name >> age;
+            {
+                Employee new_emp;
+                new_emp.emp_id = id;
+                new_emp.name = name;
+                new_emp.age = age;
+                hashTable.insert(new_emp);
+            }
             break;
 
         case 2:
-            /* code */
+            cout << "Enter a key to be searched: ";
+            cin >> key;
+            hashTable.search(key);
             break;
 
         case 3:
-            /* code */
+            cout << "Enter a key to be deleted: ";
+            cin >> key;
+            hashTable.delete_record(key);
             break;
 
         case 4:
-            /* code */
+            hashTable.display();
             break;
 
         case 5:
