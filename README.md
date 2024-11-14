@@ -81,6 +81,9 @@ Searching involves finding an element, while hashing enables quick data access u
 4. Binary search in an array. [🔗](SearchingHashing/binary_search.cpp)
 5. Recursive binary search in an array. [🔗](SearchingHashing/recursive_binary_search.cpp)
 6. Linear probing. [🔗](SearchingHashing/linear_probing.cpp)
+7. Quadratic probing. [🔗](SearchingHashing/quadratic_probing.cpp)
+8. Double hashing. [🔗](SearchingHashing/double_hashing.cpp)
+8. Separate chaining. [🔗](SearchingHashing/separate_chaining.cpp)
 
 ---
 
