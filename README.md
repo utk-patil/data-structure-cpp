@@ -83,7 +83,8 @@ Searching involves finding an element, while hashing enables quick data access u
 6. Linear probing. [🔗](SearchingHashing/linear_probing.cpp)
 7. Quadratic probing. [🔗](SearchingHashing/quadratic_probing.cpp)
 8. Double hashing. [🔗](SearchingHashing/double_hashing.cpp)
-8. Separate chaining. [🔗](SearchingHashing/separate_chaining.cpp)
+9. Separate chaining. [🔗](SearchingHashing/separate_chaining.cpp)
+10. Bucket hashing. [🔗](SearchingHashing/bucket_hashing.cpp)
 
 ---
 
