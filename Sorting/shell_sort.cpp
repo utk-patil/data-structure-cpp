@@ -1,4 +1,4 @@
-/* 4. Program of sorting using shell short */
+/* 4. Program of sorting using shell sort */
 #include <iostream>
 #include <cstdlib>
 #define MAX 100
