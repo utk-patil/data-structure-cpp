@@ -72,6 +72,16 @@ Queue is a FIFO (First In, First Out) data structure, ideal for scenarios like t
 
 ---
 
+### Sorting
+Sorting arranges elements in a specific order. This section covers popular sorting algorithms.
+
+1. Program of sorting using selection sort. [🔗](Sorting/selection_sort.cpp)
+2. Program of sorting using bubble sort. [🔗](Sorting/bubble_sort.cpp)
+3. Program of sorting using insertion sort. [🔗](Sorting/insertion_sort.cpp)
+4. Program of sorting using shell sort. [🔗](Sorting/shell_sort.cpp)
+
+---
+
 ### Searching and Hashing
 Searching involves finding an element, while hashing enables quick data access using keys.
 
