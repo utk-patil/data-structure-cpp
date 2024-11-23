@@ -96,6 +96,12 @@ Searching involves finding an element, while hashing enables quick data access u
 9. Separate chaining. [🔗](SearchingHashing/separate_chaining.cpp)
 10. Bucket hashing. [🔗](SearchingHashing/bucket_hashing.cpp)
 
+## Exercise
+Q1. An array contains the following 18 elements
+    12 19 23 27 30 34 45 56 59 61 76 79 83 85 88 90 94 97
+    Perform binary search to find the elements 27, 32, 61, 97 in the array.
+    Show the values of up, mid and low in each step. [🔗](SearchingHashing/Exercise/q1.cpp)
+
 ---
 
 ## How to Use This Repository
